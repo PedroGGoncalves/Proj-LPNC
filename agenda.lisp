@@ -1,0 +1,6 @@
+(defun data (hora dia mes ano)
+(if (and (= hora 0)( hora 24)( dia 0)(= dia 30)( mes 0)(= mes 12))
+(print Data valida)
+(print Nao valido)
+)
+)
