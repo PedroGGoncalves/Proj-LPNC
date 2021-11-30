@@ -1,13 +1,25 @@
-(defun data (hora dia mes ano) ;;data -> ainda vamos melhorar
+(defun data (hora dia mes ano)
 (if (and (>= hora 0)(< hora 24)(> dia 0)(<= dia 30)(> mes 0)(<= mes 12))
-(print "Data valida") ;; mudar o print - será um retorno
-(print "Nao valido") ;; será retorno tbm
+1
+0
 )
 )
 (defun evento (horai diai mesi anoi &optional horaf diaf mesf anof);;o fim fica optativo
-(data horai diai mesi anoi)
+(if(= (data horai diai mesi anoi) 1)
 (if(eql horaf nil) ;;omissao fim,assume se uma hora de evento
-(data (+ horai 1) diai mesi anoi)
-(data horaf diaf mesf anof) ;; se nao houve omissao
+(if (= (data (+ horai 1) diai mesi anoi) 1)
+    (print "Data valida A") ;;agenda aki
+    ;;(agenda horai diai mesi anoi horaf diaf mesf anof)
 )
+(if (= (data horaf diaf mesf anof) 1)
+(agenda horai diai mesi anoi horaf diaf mesf anof)
+;;(print "Data valida B") ;;agenda aki
+)
+;; se for valido, iria chamar agenda e armazenar (vetor?)
+)
+)
+)
+(defun agenda (h1 d1 m1 a1 h2 d2 m2 a2)
+;;vetor lista/q ira conter esses dados
+(print "Data valida B") 
 )
