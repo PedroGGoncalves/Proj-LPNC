@@ -1,0 +1,7 @@
+(defun insere_eventos ()
+(load “/home/user/agenda.lisp”)
+(evento 22 1 1 1)
+(evento 22 1 1 1)
+(evento 22 1 1 1)
+(evento 22 1 1 1)
+)
