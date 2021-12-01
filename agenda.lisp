@@ -6,7 +6,7 @@
 (setf diasf (make-array '(100)))
 (setf mesesf (make-array '(100)))
 (setf anosf (make-array '(100)))
-
+(setq contador 0)
 
 (defun data (hora dia mes ano)
 (if (and (>= hora 0)(< hora 24)(> dia 0)(<= dia 30)(> mes 0)(<= mes 12))
@@ -18,9 +18,8 @@
 (if(= (data horai diai mesi anoi) 1)
 (if(eql horaf nil) ;;omissao fim,assume se uma hora de evento
 (if (= (data (+ horai 1) diai mesi anoi) 1)
-    (print "Data valida A") ;;agenda aki
-    
-    ;;(agenda horai diai mesi anoi horaf diaf mesf anof)
+(agenda horai diai mesi anoi (+ horai 1) diai mesi anoi)
+
 )
 (if (= (data horaf diaf mesf anof) 1)
 (agenda horai diai mesi anoi horaf diaf mesf anof)
@@ -31,6 +30,25 @@
 )
 )
 (defun agenda (h1 d1 m1 a1 h2 d2 m2 a2)
-;;vetor lista/q ira conter esses dados
+(setf (aref horasi contador) h1)
+(setf (aref diasi contador) d1)
+(setf (aref mesesi contador) m1)
+(setf (aref anosi contador) a1)
+(setf (aref horasf contador) h2)
+(setf (aref diasf contador) d2)
+(setf (aref mesesf contador) m2)
+(setf (aref anosf contador) a2)
+(setq contador (+ contador 1))
+(write horasi)
+(write diasi)
+(write mesesi)
+(write anosi)
+(write horasf)
+(write diasf)
+(write mesesf)
+(write anosf)
 (print "Data valida B") 
 )
+
+(evento 22 1 1 1)
+(evento 22 3 2 20)
