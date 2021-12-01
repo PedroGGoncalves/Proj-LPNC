@@ -1,3 +1,13 @@
+(setf horasi (make-array '(100)))
+(setf diasi (make-array '(100)))
+(setf mesesi (make-array '(100)))
+(setf anosi (make-array '(100)))
+(setf horasf (make-array '(100)))
+(setf diasf (make-array '(100)))
+(setf mesesf (make-array '(100)))
+(setf anosf (make-array '(100)))
+
+
 (defun data (hora dia mes ano)
 (if (and (>= hora 0)(< hora 24)(> dia 0)(<= dia 30)(> mes 0)(<= mes 12))
 1
@@ -9,6 +19,7 @@
 (if(eql horaf nil) ;;omissao fim,assume se uma hora de evento
 (if (= (data (+ horai 1) diai mesi anoi) 1)
     (print "Data valida A") ;;agenda aki
+    
     ;;(agenda horai diai mesi anoi horaf diaf mesf anof)
 )
 (if (= (data horaf diaf mesf anof) 1)
