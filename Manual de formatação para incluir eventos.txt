@@ -1,0 +1,3 @@
+1º No arquivo insere_eventos, na função (load "/home/user/agenda.lisp") deve ser colocado o local onde se encontra o código agenda.lisp (load "local onde se encontra o código agenda").
+2º No terminal colocar (load "insere_eventos.lisp")
+3º No terminal colocar (insere_eventos)
