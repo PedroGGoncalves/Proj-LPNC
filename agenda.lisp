@@ -22,7 +22,8 @@
 
 )
 (if (= (data horaf diaf mesf anof) 1)
-(agenda horai diai mesi anoi horaf diaf mesf anof)
+(if (or(< anoi anof)(and(= anoi anof)(< mesi mesf))(and(= anoi anof)(= mesi mesf)(< diai diaf))(and(= anoi anof)(= mesi mesf)(= diai diaf)(< horai horaf)))
+(agenda horai diai mesi anoi horaf diaf mesf anof))
 ;;(print "Data valida B") ;;agenda aki
 )
 ;; se for valido, iria chamar agenda e armazenar (vetor?)
@@ -30,17 +31,18 @@
 )
 )
 (defun imprimirData (cont)
-(setq imprime 1)
+(setq imprime -1)
 (loop while (< imprime cont) 
   do (setq imprime (+ imprime 1))
-(print horasi)
-(write diasi)
-(write mesesi)
-(write anosi imprime)
-(write horasf imprime)
-(write diasf imprime)
-(write mesesf imprime)
-(write anosf imprime)
+(print (aref horasi imprime))
+(print (aref diasi imprime))
+(print (aref mesesi imprime))
+(print (aref anosi imprime))
+(print (aref horasf imprime))
+(print (aref diasf imprime))
+(print (aref mesesf imprime))
+(print (aref anosf imprime))
+
 )
 )
 
@@ -58,5 +60,14 @@
 (imprimirData contador)
 )
 
-(evento 22 1 1 1)
-(evento 22 3 2 20)
+(evento 1 1 1 1)
+(evento 3 4 5 10 6 7 8 9) ;;anof menor
+(evento 3 4 5 6 6 7 8 9) ;; anof maior
+(evento 3 4 5 9 6 7 8 9) ;;anof igual mesf maior
+
+(evento 3 4 5 9 6 7 2 9) ;;anof igual mesf menor
+(evento 3 4 8 9 6 7 8 9) ;;anof igual mesf igual diaf maior
+
+(evento 3 3 8 9 6 3 8 9) ;;anof igual mesf igual diaf igual
+(evento 3 3 8 9 6 2 8 9);;anof igual mesf igual diaf menor horaf maior
+(evento 3 3 8 9 2 3 8 9);;anof igual mesf igual diaf menor horaf menor ou igual
