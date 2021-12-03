@@ -6,6 +6,8 @@ Arquivo lisp de inserção OK
 Verificação (anof>=anoi, mesf>=mesi, diaf>=diai, horaf>=horai) OK
 (print (aref vetor 1)) OK
 Pegar nome do evento OK
+Mostrar o calendário para uma data específica (Janeiro 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20) OK
+
 
 #Aumentar casos de teste no arquivo de inserção e colocar nome tbm
 
@@ -13,10 +15,6 @@ Pegar nome do evento OK
 Evento "Nome"
 inicio: 1 de Janeiro 13 horas
 fim: 1 de Janeiro 14 horas
-
-
-#Mostrar o calendário para uma data específica
-Janeiro 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
 
 #Documentação (todas funções) (FAZER APOS COD PRONTO)
 
