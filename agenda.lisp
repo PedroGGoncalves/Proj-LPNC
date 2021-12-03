@@ -55,9 +55,10 @@
 (setf (aref diasf contador) d2)
 (setf (aref mesesf contador) m2)
 (setf (aref anosf contador) a2)
-(setq contador (+ contador 1))
+
 (print "Data valida B") 
 (imprimirData contador)
+(setq contador (+ contador 1))
 )
 
 (evento 1 1 1 1)
