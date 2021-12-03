@@ -63,7 +63,40 @@
 (imprimirData contador)
 (setq contador (+ contador 1))
 )
+(defun printa_dia (dia)
+ (setq contador_cal 0)
+   (loop repeat dia do
+   (setq contador_cal (+ contador_cal 1))
+   (format t " ~d" contador_cal)
 
+)
+)
+(defun calendario (dia mes)
+(cond
+ ((and(<= dia 30)(>= dia 1))
+ (cond
+    ((= mes 1) (format t "Janeiro") (printa_dia dia))
+    ((= mes 2) (format t "Fevereiro") (printa_dia dia))
+    ((= mes 3) (format t "Março") (printa_dia dia))
+    ((= mes 4) (format t "Abril") (printa_dia dia))
+    ((= mes 5) (format t "Maio") (printa_dia dia))
+    ((= mes 6) (format t "Junho") (printa_dia dia))
+    ((= mes 7)(format t "Julho") (printa_dia dia))
+    ((= mes 8) (format t "Agosto") (printa_dia dia))
+    ((= mes 9) (format t "Setembro") (printa_dia dia))
+    ((= mes 10) (format t "Outubro") (printa_dia dia))
+    ((= mes 11) (format t "Novembro") (printa_dia dia))
+    ((= mes 12) (format t "Dezembro") (printa_dia dia))
+    (t (format t "Mes invalido"))
+ )
+ )
+  (t (format t "Dia invalido"))
+)
+
+ 
+)
+  
+(calendario 30 6)
 (evento 'teste 1 1 1 1)
 (evento 'testea 3 4 5 10 6 7 8 9) ;;anof menor
 (evento 'testeb 3 4 5 6 6 7 8 9) ;; anof maior
@@ -75,3 +108,4 @@
 (evento 'testef 3 3 8 9 6 3 8 9) ;;anof igual mesf igual diaf igual
 (evento 'testeg 3 3 8 9 6 2 8 9);;anof igual mesf igual diaf menor horaf maior
 (evento 'testeh 3 3 8 9 2 3 8 9);;anof igual mesf igual diaf menor horaf menor ou igual
+
