@@ -7,7 +7,7 @@ Verificação (anof>=anoi, mesf>=mesi, diaf>=diai, horaf>=horai) OK
 (print (aref vetor 1)) OK
 Pegar nome do evento OK
 
-#Aumentar casos de teste no arquivo de inserção 
+#Aumentar casos de teste no arquivo de inserção e colocar nome tbm
 
 #Listar eventos data específica
 Evento "Nome"
