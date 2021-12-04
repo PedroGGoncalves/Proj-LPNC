@@ -1,12 +1,12 @@
 (setf nome (make-array '(100)))
-(setf horasi (make-array '(100)))
-(setf diasi (make-array '(100)))
-(setf mesesi (make-array '(100)))
-(setf anosi (make-array '(100)))
-(setf horasf (make-array '(100)))
-(setf diasf (make-array '(100)))
-(setf mesesf (make-array '(100)))
-(setf anosf (make-array '(100)))
+(setf horasInicial (make-array '(100)))
+(setf diasInicial (make-array '(100)))
+(setf mesesInicial (make-array '(100)))
+(setf anosInicial (make-array '(100)))
+(setf horasFinal (make-array '(100)))
+(setf diasFinal (make-array '(100)))
+(setf mesesFinal (make-array '(100)))
+(setf anosFinal (make-array '(100)))
 (setq contador 0)
 
 (defun data (hora dia mes ano)
@@ -15,16 +15,16 @@
 0
 )
 )
-(defun evento (nome horai diai mesi anoi &optional horaf diaf mesf anof);;o fim fica optativo
-(if(= (data horai diai mesi anoi) 1)
-(if(eql horaf nil) ;;omissao fim,assume se uma hora de evento
-(if (= (data (+ horai 1) diai mesi anoi) 1)
-(agenda nome horai diai mesi anoi (+ horai 1) diai mesi anoi)
+(defun evento (nome horasInicial diasInicial mesesInicial anosInicial &optional horasFinal diasFinal mesesFinal anosFinal);;o fim fica optativo
+(if(= (data horasInicial diasInicial mesesInicial anosInicial) 1)
+(if(eql horasFinal nil) ;;omissao fim,assume se uma hora de evento
+(if (= (data (+ horasInicial 1) diasInicial mesesInicial anosInicial) 1)
+(agenda nome horasInicial diasInicial mesesInicial anosInicial (+ horasInicial 1) diasInicial mesesInicial anosInicial)
 
 )
-(if (= (data horaf diaf mesf anof) 1)
-(if (or(< anoi anof)(and(= anoi anof)(< mesi mesf))(and(= anoi anof)(= mesi mesf)(< diai diaf))(and(= anoi anof)(= mesi mesf)(= diai diaf)(< horai horaf)))
-(agenda nome horai diai mesi anoi horaf diaf mesf anof))
+(if (= (data horasFinal diasFinal mesesFinal anosFinal) 1)
+(if (or(< anosInicial anosFinal)(and(= anosInicial anosFinal)(< mesesInicial mesesFinal))(and(= anosInicial anosFinal)(= mesesInicial mesesFinal)(< diasInicial diasFinal))(and(= anosInicial anosFinal)(= mesesInicial mesesFinal)(= diasInicial diasFinal)(< horasInicial horasFinal)))
+(agenda nome horasInicial diasInicial mesesInicial anosInicial horasFinal diasFinal mesesFinal anosFinal))
 ;;(print "Data valida B") ;;agenda aki
 )
 ;; se for valido, iria chamar agenda e armazenar (vetor?)
@@ -36,28 +36,28 @@
 (loop while (< imprime cont) 
   do (setq imprime (+ imprime 1))
 (print (aref nome imprime))
-(print (aref horasi imprime))
-(print (aref diasi imprime))
-(print (aref mesesi imprime))
-(print (aref anosi imprime))
-(print (aref horasf imprime))
-(print (aref diasf imprime))
-(print (aref mesesf imprime))
-(print (aref anosf imprime))
+(print (aref horasInicial imprime))
+(print (aref diasInicial imprime))
+(print (aref mesesInicial imprime))
+(print (aref anosInicial imprime))
+(print (aref horasFinal imprime))
+(print (aref diasFinal imprime))
+(print (aref mesesFinal imprime))
+(print (aref anosFinal imprime))
 
 )
 )
 
 (defun agenda (n h1 d1 m1 a1 h2 d2 m2 a2)
 (setf (aref nome contador) n)
-(setf (aref horasi contador) h1)
-(setf (aref diasi contador) d1)
-(setf (aref mesesi contador) m1)
-(setf (aref anosi contador) a1)
-(setf (aref horasf contador) h2)
-(setf (aref diasf contador) d2)
-(setf (aref mesesf contador) m2)
-(setf (aref anosf contador) a2)
+(setf (aref horasInicial contador) h1)
+(setf (aref diasInicial contador) d1)
+(setf (aref mesesInicial contador) m1)
+(setf (aref anosInicial contador) a1)
+(setf (aref horasFinal contador) h2)
+(setf (aref diasFinal contador) d2)
+(setf (aref mesesFinal contador) m2)
+(setf (aref anosFinal contador) a2)
 
 (print "Data valida B") 
 (imprimirData contador)
@@ -108,4 +108,3 @@
 (evento 'testef 3 3 8 9 6 3 8 9) ;;anof igual mesf igual diaf igual
 (evento 'testeg 3 3 8 9 6 2 8 9);;anof igual mesf igual diaf menor horaf maior
 (evento 'testeh 3 3 8 9 2 3 8 9);;anof igual mesf igual diaf menor horaf menor ou igual
-
