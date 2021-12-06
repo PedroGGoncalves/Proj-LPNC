@@ -29,9 +29,9 @@
 (if (= (data horasFinal diasFinal mesesFinal anosFinal) 1)
 (if (or(< anosInicial anosFinal)(and(= anosInicial anosFinal)(< mesesInicial mesesFinal))(and(= anosInicial anosFinal)(= mesesInicial mesesFinal)(< diasInicial diasFinal))(and(= anosInicial anosFinal)(= mesesInicial mesesFinal)(= diasInicial diasFinal)(< horasInicial horasFinal)))
 (agenda nome horasInicial diasInicial mesesInicial anosInicial horasFinal diasFinal mesesFinal anosFinal))
-;;(print "Data valida B") ;;agenda aki
+
 )
-;; se for valido, iria chamar agenda e armazenar (vetor?)
+
 )
 )
 )
