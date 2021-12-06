@@ -127,7 +127,7 @@
 (print (aref anosFinal imprime))
 (cond
 ((= aux contador) (format t "nao encontrado"))
-((< aux contador)(format t "nao encontrado")(ImprimirDia aux))
+((< aux contador)(format t "encontrado")(ImprimirDia aux))
 )
 
 )
