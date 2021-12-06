@@ -110,12 +110,11 @@
   (t (format t "Dia invalido"))
 )
 )
+
 (defun consulta (dia mes ano)
-(setq aux 0)
-(loop while (or (and(!= dia (diasInicial aux))(!= mes (mesesInicial aux))(!= ano (anosInicial aux)))(< aux contador))
+(setq aux -1)
+(loop while (or (< aux contador)(and(/= dia (aref diasInicial aux))(/= mes (aref mesesInicial aux))(/= ano (aref anosInicial aux))))
   do (setq aux (+ aux 1))
-
-
 )
 (print (aref nome imprime))
 (print (aref horasInicial imprime))
@@ -143,7 +142,7 @@
 (evento 'testea 3 4 5 10 6 7 8 9) ;;anof menor
 (evento 'testeb 3 4 5 6 6 7 8 9) ;; anof maior
 (evento 'testec 3 4 5 9 6 7 8 9) ;;anof igual mesf maior
-
+(consulta 4 5 10)
 (evento 'tested 3 4 5 9 6 7 2 9) ;;anof igual mesf menor
 (evento 'testee 3 4 8 9 6 7 8 9) ;;anof igual mesf igual diaf maior
 
