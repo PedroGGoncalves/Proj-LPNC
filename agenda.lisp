@@ -109,7 +109,8 @@
 
 (defun consulta (dia mes ano)
 (setq aux 0)
-(loop while (and (< aux contador)(or(/= dia (aref diasInicial aux))(/= mes (aref mesesInicial aux))(/= ano (aref anosInicial aux))))
+(loop while (< aux contador)
+do (loop while (and (< aux contador)(or(/= dia (aref diasInicial aux))(/= mes (aref mesesInicial aux))(/= ano (aref anosInicial aux))))
   do (setq aux (+ aux 1))
   
 )
@@ -118,7 +119,8 @@
 ((= aux contador) (format t "~%nao encontrado"))
 ((< aux contador)(format t "~%encontrado")(ImprimirDia aux))
 )
-
+(setq aux (+ aux 1))
+)
 )
 ;; Testes
 (describe #'calendario )
