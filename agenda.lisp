@@ -10,14 +10,17 @@
 (setq contador 0)
 
 (defun data (hora dia mes ano)
+"Validação da data"
 (if (and (>= hora 0)(< hora 24)(> dia 0)(<= dia 30)(> mes 0)(<= mes 12))
 1
 0
 )
 )
 (defun evento (nome horasInicial diasInicial mesesInicial anosInicial &optional horasFinal diasFinal mesesFinal anosFinal);;o fim fica optativo
+"Validação e inserção da data do evento"
 (if(= (data horasInicial diasInicial mesesInicial anosInicial) 1)
 (if(eql horasFinal nil) ;;omissao fim,assume se uma hora de evento
+
 (if (= (data (+ horasInicial 1) diasInicial mesesInicial anosInicial) 1)
 (agenda nome horasInicial diasInicial mesesInicial anosInicial (+ horasInicial 1) diasInicial mesesInicial anosInicial)
 
@@ -49,6 +52,7 @@
 )
 
 (defun agenda (n h1 d1 m1 a1 h2 d2 m2 a2)
+"Evento inserido"
 (setf (aref nome contador) n)
 (setf (aref horasInicial contador) h1)
 (setf (aref diasInicial contador) d1)
@@ -59,7 +63,6 @@
 (setf (aref mesesFinal contador) m2)
 (setf (aref anosFinal contador) a2)
 
-(print "Data valida B") 
 (imprimirData contador)
 (setq contador (+ contador 1))
 )
@@ -72,6 +75,7 @@
 )
 )
 (defun calendario (dia mes)
+"Mostrar o calendário para uma data específica"
 (cond
  ((and(<= dia 30)(>= dia 1))
  (cond
@@ -95,7 +99,12 @@
 
  
 )
-  
+;; Testes
+(describe #'calendario )
+(describe #'data )
+(describe #'evento )
+(describe #'agenda )
+
 (calendario 30 6)
 (evento 'teste 1 1 1 1)
 (evento 'testea 3 4 5 10 6 7 8 9) ;;anof menor
