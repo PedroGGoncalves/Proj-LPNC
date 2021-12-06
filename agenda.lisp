@@ -50,6 +50,19 @@
 
 )
 )
+(defun imprimirDia (imprime)
+(print (aref nome imprime))
+(print (aref horasInicial imprime))
+(print (aref diasInicial imprime))
+(print (aref mesesInicial imprime))
+(print (aref anosInicial imprime))
+(print (aref horasFinal imprime))
+(print (aref diasFinal imprime))
+(print (aref mesesFinal imprime))
+(print (aref anosFinal imprime))
+
+)
+
 
 (defun agenda (n h1 d1 m1 a1 h2 d2 m2 a2)
 "Evento inserido"
@@ -96,8 +109,28 @@
  )
   (t (format t "Dia invalido"))
 )
+)
+(defun consulta (dia mes ano)
+(setq aux 0)
+(loop while (or (and(!= dia (diasInicial aux))(!= mes (mesesInicial aux))(!= ano (anosInicial aux)))(< aux contador))
+  do (setq aux (+ aux 1))
 
- 
+
+)
+(print (aref nome imprime))
+(print (aref horasInicial imprime))
+(print (aref diasInicial imprime))
+(print (aref mesesInicial imprime))
+(print (aref anosInicial imprime))
+(print (aref horasFinal imprime))
+(print (aref diasFinal imprime))
+(print (aref mesesFinal imprime))
+(print (aref anosFinal imprime))
+(cond
+((= aux contador) (format t "nao encontrado"))
+((< aux contador)(format t "nao encontrado")(ImprimirDia aux))
+)
+
 )
 ;; Testes
 (describe #'calendario )
