@@ -1,11 +1,14 @@
 (defun insere_eventos ()
 (load “/home/user/agenda.lisp”)
-(evento 22 1 1 1)
-(evento 23 1 1 1)
-(evento 24 1 1 1)
-(evento 25 1 1 1)
-(evento -1 1 1 1)
-(evento 22 1 1 1 22 2 1 1)
-(evento 25 1 1 1 22 2 1 1)
-(evento 22 31 1 1 22 2 1 1)
+(evento 'teste 1 1 1 1)
+(evento 'testea 3 4 5 10 6 7 8 9) ;;anof menor
+(evento 'testeb 3 4 5 6 6 7 8 9) ;; anof maior
+(evento 'testec 3 4 5 9 6 7 8 9) ;;anof igual mesf maior
+
+(evento 'tested 3 4 5 9 6 7 2 9) ;;anof igual mesf menor
+(evento 'testee 3 4 8 9 6 7 8 9) ;;anof igual mesf igual diaf maior
+
+(evento 'testef 3 3 8 9 6 3 8 9) ;;anof igual mesf igual diaf igual
+(evento 'testeg 3 3 8 9 6 2 8 9);;anof igual mesf igual diaf menor horaf maior
+(evento 'testeh 3 3 8 9 2 3 8 9);;anof igual mesf igual diaf menor horaf menor ou igual
 )
