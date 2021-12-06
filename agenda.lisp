@@ -9,6 +9,7 @@
 (setf anosFinal (make-array '(100)))
 (setq contador 0)
 
+
 (defun data (hora dia mes ano)
 "Validação da data"
 (if (and (>= hora 0)(< hora 24)(> dia 0)(<= dia 30)(> mes 0)(<= mes 12))
@@ -112,22 +113,13 @@
 )
 
 (defun consulta (dia mes ano)
-(setq aux -1)
-(loop while (or (<(+ aux 1) contador)(and(/= dia (aref diasInicial aux))(/= mes (aref mesesInicial aux))(/= ano (aref anosInicial aux))))
+(setq aux 0)
+(loop while (and (< aux contador)(or(/= dia (aref diasInicial aux))(/= mes (aref mesesInicial aux))(/= ano (aref anosInicial aux))))
   do (setq aux (+ aux 1))
 )
-(print (aref nome imprime))
-(print (aref horasInicial imprime))
-(print (aref diasInicial imprime))
-(print (aref mesesInicial imprime))
-(print (aref anosInicial imprime))
-(print (aref horasFinal imprime))
-(print (aref diasFinal imprime))
-(print (aref mesesFinal imprime))
-(print (aref anosFinal imprime))
 (cond
-((= aux contador) (format t "nao encontrado"))
-((< aux contador)(format t "encontrado")(ImprimirDia aux))
+((= aux contador) (format t "~%nao encontrado"))
+((< aux contador)(format t "~%encontrado")(ImprimirDia aux))
 )
 
 )
@@ -142,7 +134,7 @@
 (evento 'testea 3 4 5 10 6 7 8 9) ;;anof menor
 (evento 'testeb 3 4 5 6 6 7 8 9) ;; anof maior
 (evento 'testec 3 4 5 9 6 7 8 9) ;;anof igual mesf maior
-(consulta 4 5 10)
+(consulta 4 5 9)
 (evento 'tested 3 4 5 9 6 7 2 9) ;;anof igual mesf menor
 (evento 'testee 3 4 8 9 6 7 8 9) ;;anof igual mesf igual diaf maior
 
