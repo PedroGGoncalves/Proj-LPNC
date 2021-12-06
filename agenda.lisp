@@ -113,7 +113,7 @@
 
 (defun consulta (dia mes ano)
 (setq aux -1)
-(loop while (or (< aux contador)(and(/= dia (aref diasInicial aux))(/= mes (aref mesesInicial aux))(/= ano (aref anosInicial aux))))
+(loop while (or (<(+ aux 1) contador)(and(/= dia (aref diasInicial aux))(/= mes (aref mesesInicial aux))(/= ano (aref anosInicial aux))))
   do (setq aux (+ aux 1))
 )
 (print (aref nome imprime))
