@@ -6,7 +6,7 @@
 (describe #'evento )
 (describe #'agenda )
 
-(calendario 30 6)
+
 (evento 'teste 1 1 1 1)
 (evento 'testea 3 4 5 10 6 7 8 9) ;;anof menor
 (evento 'testeb 3 4 5 6 6 7 8 9) ;; anof maior
