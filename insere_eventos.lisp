@@ -11,7 +11,7 @@
 (evento 'testea 3 4 5 10 6 7 8 9) ;;anof menor
 (evento 'testeb 3 4 5 6 6 7 8 9) ;; anof maior
 (evento 'testec 3 4 5 9 6 7 8 9) ;;anof igual mesf maior
-(consulta 4 5 9)
+(consulta 4 5 9);;Procura o evento nesse dia
 (consulta 1 1 1)
 (evento 'tested 3 4 5 9 6 7 2 9) ;;anof igual mesf menor
 (evento 'testee 3 4 8 9 6 7 8 9) ;;anof igual mesf igual diaf maior
