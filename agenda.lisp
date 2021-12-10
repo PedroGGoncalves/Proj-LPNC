@@ -114,8 +114,15 @@
 )
 )
 
-(defun consulta (dia mes ano)
+(defun consulta (mes ano &optional dia)
 "Consulta evento dia específico"
+(setq x 1)
+(if(eql dia nil)
+ (setq x 0)
+)
+
+(cond
+((= x 1)
 (setq aux 0)
 (loop while (< aux contador)
 do (loop while (and (< aux contador)(or(/= dia (aref diasInicial aux))(/= mes (aref mesesInicial aux))(/= ano (aref anosInicial aux))))
@@ -130,3 +137,29 @@ do (loop while (and (< aux contador)(or(/= dia (aref diasInicial aux))(/= mes (a
 (setq aux (+ aux 1))
 )
 )
+((= x 0)
+(setq aux 0)
+(loop while (< aux contador)
+do (loop while (and (< aux contador)(or(/= mes (aref mesesInicial aux))(/= ano (aref anosInicial aux))))
+  do (setq aux (+ aux 1))
+  
+)
+
+(cond
+((= aux contador) (format t "~%Não encontrado"))
+((< aux contador)(format t "~%Encontrado")(ImprimirDia aux))
+)
+(setq aux (+ aux 1))
+)
+)
+(t (format t "~%invalido"))
+)
+)
+;; (consulta mes ano dia)
+(evento 'teste 1 1 1 1)
+(evento 'testea 3 4 5 6 6 7 8 9) ;;anof menor
+(evento 'testeb 3 3 5 6 6 7 8 9) ;; anof maior
+(evento 'testec 3 4 5 9 6 7 8 9) ;;anof igual mesf
+(evento 'tested 3 30 5 6 6 7 8 9);;maior
+(consulta 5 6 4 )
+(consulta 5 6 )
