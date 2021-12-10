@@ -9,5 +9,5 @@ Pedro Gonçalves
 4º No terminal colocar (insere_eventos)
 
 Existe 3 funçoes: Evento, para criar um evento na agenda, Consulta para consultar se há um evento na data fornecida e Calendário, que imprime o dia, ou mês, ou ano.
-Colocamos um arquivo com exemplos de uso de cada função, com comentários explicando
+Colocamos um arquivo com exemplos de uso de cada função, com comentários explicando.
 
