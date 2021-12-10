@@ -69,8 +69,29 @@
 
 )
 )
-(defun calendario (dia mes)
+(defun ano_inteiro (dia)
+(format t "~%Janeiro") (printa_dia dia)
+(format t "~%Fevereiro") (printa_dia dia)
+(format t "~%Março") (printa_dia dia)
+(format t "~%Abril") (printa_dia dia)
+(format t "~%Maio") (printa_dia dia)
+(format t "~%Junho") (printa_dia dia)
+(format t "~%Julho") (printa_dia dia)
+(format t "~%Agosto") (printa_dia dia)
+(format t "~%Setembro") (printa_dia dia)
+(format t "~%Outubro") (printa_dia dia)
+(format t "~%Novembro") (printa_dia dia)
+(format t "~%Dezembro") (printa_dia dia)
+)
+(defun calendario (ano &optional dia mes)
 "Mostrar o calendário para uma data específica"
+
+(if(eql dia nil)
+ (setq dia 0)
+)
+(if (= dia 0)
+(ano_inteiro 30)
+)
 (cond
  ((and(<= dia 30)(>= dia 1))
  (cond
@@ -89,7 +110,7 @@
     (t (format t "~%Mes invalido"))
  )
  )
-  (t (format t "~%Dia invalido"))
+  (t (format t "~%Dia invalido/Sem dia inserido"))
 )
 )
 
@@ -109,3 +130,7 @@ do (loop while (and (< aux contador)(or(/= dia (aref diasInicial aux))(/= mes (a
 (setq aux (+ aux 1))
 )
 )
+(calendario 2021 2 2)
+
+(calendario 2021)
+(calendario 2021 28 2)
