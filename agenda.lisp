@@ -1,3 +1,8 @@
+;;Grupo:
+;;Gustavo Letício
+;;Lucas Bastelli
+;;Pedro Gonçalves
+
 (setf nome (make-array '(100)))
 (setf horasInicial (make-array '(100)))
 (setf diasInicial (make-array '(100)))
