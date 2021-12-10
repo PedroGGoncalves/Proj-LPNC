@@ -1,3 +1,9 @@
+;;Grupo:
+;;Gustavo Letício
+;;Lucas Bastelli
+;;Pedro Gonçalves
+
+
 (defun insere_eventos ()
 (load “/home/user/agenda.lisp”)
 ;; Testes
