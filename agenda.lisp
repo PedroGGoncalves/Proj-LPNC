@@ -130,7 +130,3 @@ do (loop while (and (< aux contador)(or(/= dia (aref diasInicial aux))(/= mes (a
 (setq aux (+ aux 1))
 )
 )
-(calendario 2021 2 2)
-
-(calendario 2021)
-(calendario 2021 28 2)
